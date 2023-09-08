@@ -3156,7 +3156,7 @@ return!"\t\n\x0B\f\r                　\u2028\u2029
     <div>
     <div class="quarto-title-meta-heading">Modified</div>
     <div class="quarto-title-meta-contents">
-      <p class="date-modified">Th 2023-09-07 17:19</p>
+      <p class="date-modified">Fr 2023-09-08 16:09</p>
     </div>
   </div>
     
@@ -3197,7 +3197,7 @@ return!"\t\n\x0B\f\r                　\u2028\u2029
 \tag{3}\]</span></span></p>
 <p>Recalling that the power of a resistor is</p>
 <p><span id="eq-resistor-power"><span class="math display">\[
-P_R = IV = I \frac{I}{R} = I^2 R
+P_R = IV = I \left( I R \right) = I^2 R
 \tag{4}\]</span></span></p>
 <p>For this particular rod, the total resistance is given by</p>
 <p><span id="eq-rod-resistance"><span class="math display">\[
@@ -3213,14 +3213,14 @@ R = R&#39;_e L
 \tag{7}\]</span></span></p>
 <p>Where the <span class="math inline">\(A\)</span> term is the surface area of the rod and is given by</p>
 <p><span id="eq-area"><span class="math display">\[
-A = \pi D L
+A = \pi D L = 31.4\ \mathrm{cm}^{2}
 \tag{8}\]</span></span></p>
 <p>The simplified energy balance may be found by combining the equations above</p>
 <p><span id="eq-first-law6"><span class="math display">\[
 0 = I^2 R&#39;_e L - h \left( \pi D L\right) \left( T_s - T_{\infty}\right) - \varepsilon \sigma \left( \pi D L\right) \left( T_s^4 - T_{sur}^4\right)
 \tag{9}\]</span></span></p>
 <p>Inspecting the expression above, it may be seen that everything is known expect the surface temperature <span class="math inline">\(T_s\)</span> (while the current <span class="math inline">\(I\)</span> is not a fixed value it is still a known value). Similar to the <a href="01.Example%201.html">previous problem</a>, there is no closed-form solution. The Newton-Raphson method of root finding will be implemented again to reach a solution. The <code>newton_raphson</code> function is defined below.</p>
-<div class="cell" data-execution_count="6">
+<div class="cell" data-execution_count="7">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1"></a><span class="kw">def</span> newton_raphson(f, x, xFixed, tol <span class="op">=</span> <span class="fl">0.001</span>):</span>
 <span id="cb1-2"><a href="#cb1-2"></a>    h <span class="op">=</span> <span class="fl">0.000000001</span></span>
 <span id="cb1-3"><a href="#cb1-3"></a>    <span class="cf">while</span>(<span class="bu">abs</span>(f(x, xFixed)) <span class="op">&gt;</span> tol):</span>
@@ -3229,24 +3229,24 @@ A = \pi D L
 <span id="cb1-6"><a href="#cb1-6"></a>    <span class="cf">return</span> x</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>The heat transfer expression may now be defined as a python function. This is shown below.</p>
-<div class="cell" data-execution_count="8">
+<div class="cell" data-execution_count="9">
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1"></a><span class="kw">def</span> hx_expr(T_s, I):</span>
 <span id="cb2-2"><a href="#cb2-2"></a>    <span class="cf">return</span> I<span class="op">**</span><span class="dv">2</span><span class="op">*</span>R_e<span class="op">*</span>L <span class="op">-</span> h<span class="op">*</span>math.pi<span class="op">*</span>D<span class="op">*</span>L<span class="op">*</span>(T_s <span class="op">-</span> T_inf) <span class="op">-</span> es<span class="op">*</span>sig<span class="op">*</span>math.pi<span class="op">*</span>D<span class="op">*</span>L<span class="op">*</span>(T_s<span class="op">**</span><span class="dv">4</span> <span class="op">-</span> T_sur<span class="op">**</span><span class="dv">4</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>The range of the current values (<span class="math inline">\(I_{min} = 0\)</span> to <span class="math inline">\(I_{max} = 10\)</span>) may be defined using a Python list. The range is divided into <span class="math inline">\(50\)</span> intervals for good resolution on the plot.</p>
-<div class="cell" data-execution_count="10">
+<div class="cell" data-execution_count="11">
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1"></a>intervals <span class="op">=</span> <span class="dv">50</span></span>
 <span id="cb3-2"><a href="#cb3-2"></a>I <span class="op">=</span> [val<span class="op">/</span>intervals <span class="cf">for</span> val <span class="kw">in</span> <span class="bu">range</span>(I_min<span class="op">*</span>intervals, I_max<span class="op">*</span>intervals <span class="op">+</span> <span class="dv">1</span>)]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>Now for every current value in the range, the surface temperature may be found. This is shown below.</p>
-<div class="cell" data-execution_count="11">
+<div class="cell" data-execution_count="12">
 <div class="sourceCode cell-code" id="cb4"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1"></a>T_s <span class="op">=</span> []</span>
 <span id="cb4-2"><a href="#cb4-2"></a><span class="cf">for</span> Ie <span class="kw">in</span> I:</span>
 <span id="cb4-3"><a href="#cb4-3"></a>    T_s.append(newton_raphson(hx_expr, <span class="dv">100</span>, Ie))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <hr>
 <p>The plot may now be generated. This is shown below.</p>
-<div class="cell" data-execution_count="12">
+<div class="cell" data-execution_count="13">
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1"></a>fig, ax <span class="op">=</span> plt.subplots(<span class="dv">1</span>, <span class="dv">1</span>)</span>
 <span id="cb5-2"><a href="#cb5-2"></a>ax.plot(I, T_s)</span>
 <span id="cb5-3"><a href="#cb5-3"></a>ax.set_xlabel(<span class="st">&#39;Current, $I</span><span class="ch">\\</span><span class="st"> </span><span class="ch">\\</span><span class="st">left(A </span><span class="ch">\\</span><span class="st">right)$&#39;</span>)</span>
