@@ -3122,7 +3122,7 @@ return!"\t\n\x0B\f\r                　\u2028\u2029
     <div>
     <div class="quarto-title-meta-heading">Modified</div>
     <div class="quarto-title-meta-contents">
-      <p class="date-modified">Sa 2023-09-23 19:21</p>
+      <p class="date-modified">Mo 2023-09-25 09:50</p>
     </div>
   </div>
     
@@ -3142,10 +3142,10 @@ return!"\t\n\x0B\f\r                　\u2028\u2029
 <section id="solution" class="level2">
 <h2 class="anchored" data-anchor-id="solution">Solution:</h2>
 <p>Start first by defining all of the given values.</p>
-<p><span class="math display">\[T_{inf} = 10\ \mathrm{°C} = 283.15\ \mathrm{K}\]</span> <span class="math display">\[h = 2\ \frac{\mathrm{W}}{\left(\mathrm{K} \cdot \mathrm{m}^{2}\right)}\]</span> <span class="math display">\[T_i = 35\ \mathrm{°C} = 308.15\ \mathrm{K}\]</span> <span class="math display">\[L_{sf} = 3\ \mathrm{mm}\]</span> <span class="math display">\[k_{sf} = 0.3\ \frac{\mathrm{W}}{\left(\mathrm{K} \cdot \mathrm{m}\right)}\]</span> <span class="math display">\[A = 1.8\ \mathrm{m}^{2}\]</span> <span class="math display">\[k_{ins} = 0.014\ \frac{\mathrm{W}}{\left(\mathrm{K} \cdot \mathrm{m}\right)}\]</span> <span class="math display">\[\varepsilon = 0.95\]</span> <span class="math display">\[q = 100\ \mathrm{W}\]</span></p>
+<p><span class="math display">\[T_{\infty} = 10\ \mathrm{°C} = 283.15\ \mathrm{K}\]</span> <span class="math display">\[h = 2\ \frac{\mathrm{W}}{\left(\mathrm{K} \cdot \mathrm{m}^{2}\right)}\]</span> <span class="math display">\[T_i = 35\ \mathrm{°C} = 308.15\ \mathrm{K}\]</span> <span class="math display">\[L_{sf} = 3\ \mathrm{mm}\]</span> <span class="math display">\[k_{sf} = 0.3\ \frac{\mathrm{W}}{\left(\mathrm{K} \cdot \mathrm{m}\right)}\]</span> <span class="math display">\[A = 1.8\ \mathrm{m}^{2}\]</span> <span class="math display">\[k_{ins} = 0.014\ \frac{\mathrm{W}}{\left(\mathrm{K} \cdot \mathrm{m}\right)}\]</span> <span class="math display">\[\varepsilon = 0.95\]</span> <span class="math display">\[q = 100\ \mathrm{W}\]</span></p>
 <p>Since an emissivity is given, there must be radiation occurring. The surrounding temperature may be assumed the same as the air temperature although this is not always the case. This is shown below.</p>
 <p><span class="math display">\[
-T_{sur} = T_{inf}
+T_{sur} = T_{\infty}
 \]</span></p>
 <p>Other known quantities that will be used are shown below.</p>
 <p><span class="math display">\[\sigma = 5.67\times 10^{-8}\ \frac{\mathrm{W}}{\left(\mathrm{K}^{4} \cdot \mathrm{m}^{2}\right)}\]</span></p>
@@ -3168,9 +3168,11 @@ T_{sur} = T_{inf}
 T_i-T_s=q\frac{L_{sf}}{k_{sf}A}
 \]</span></p>
 <p>Solving for the skin temperature is then</p>
-<p><span class="math display">\[
-T_s = T_i-q\frac{L_{sf}}{k_{sf} A} = 307.6\ \mathrm{K} = 34.4\ \mathrm{°C}
-\]</span></p>
+<hr>
+<div class="answer">
+<p>Answer: <span class="math inline">\(T_s = T_i-q\frac{L_{sf}}{k_{sf} A} = 307.6\ \mathrm{K} = 34.4\ \mathrm{°C}\)</span></p>
+</div>
+<hr>
 <p>Looking at the circuit, it may be seen that the total thermal resistance may be found by</p>
 <p><span class="math display">\[
 R_{tot} = \frac{T_i-T_{\infty}}{q} = 0.25\ \frac{\mathrm{Δ°C}}{\mathrm{W}}
