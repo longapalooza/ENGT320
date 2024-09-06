@@ -3271,11 +3271,11 @@ Figure 1: Conducting Rod
 </figure>
 </div>
 <p>The various parameters are shown below.</p>
-<p><span class="math display">\[D = 1 mm\]</span> <span class="math display">\[L = 1 m\]</span> <span class="math display">\[R&#39;_e = 0.4 Ω / m\]</span> <span class="math display">\[T_\infty = 300 K\]</span> <span class="math display">\[T_{sur} = 300 K\]</span> <span class="math display">\[h = 100 W / K / m ** 2\]</span> <span class="math display">\[\varepsilon = 0.8\]</span></p>
+<p><span class="math display">\[D = 1\ \mathrm{mm}\]</span> <span class="math display">\[L = 1\ \mathrm{m}\]</span> <span class="math display">\[R&#39;_e = 0.4\ \frac{\mathrm{Ω}}{\mathrm{m}}\]</span> <span class="math display">\[T_\infty = 300\ \mathrm{K}\]</span> <span class="math display">\[T_{sur} = 300\ \mathrm{K}\]</span> <span class="math display">\[h = 100\ \frac{\mathrm{W}}{\left(\mathrm{K} \cdot \mathrm{m}^{2}\right)}\]</span> <span class="math display">\[\varepsilon = 0.8\]</span></p>
 </section>
 <section id="required" class="level2">
 <h2 class="anchored" data-anchor-id="required">Required:</h2>
-<p>Develop an equation that could be used to compute the variation of the rod temperature with current at steady state conditions and fixed environmental conditions. Plot the resulting relationship for current ranging from <span class="math inline">\(0 A\)</span> to <span class="math inline">\(10 A\)</span>.</p>
+<p>Develop an equation that could be used to compute the variation of the rod temperature with current at steady state conditions and fixed environmental conditions. Plot the resulting relationship for current ranging from <span class="math inline">\(0\ \mathrm{A}\)</span> to <span class="math inline">\(10\ \mathrm{A}\)</span>.</p>
 </section>
 <section id="solution" class="level2">
 <h2 class="anchored" data-anchor-id="solution">Solution:</h2>
@@ -3309,14 +3309,14 @@ R = R&#39;_e L
 \tag{7}\]</span></span></p>
 <p>Where the <span class="math inline">\(A\)</span> term is the surface area of the rod and is given by</p>
 <p><span id="eq-area"><span class="math display">\[
-A = \pi D L = 31.4 cm ** 2
+A = \pi D L = 31.4\ \mathrm{cm}^{2}
 \tag{8}\]</span></span></p>
 <p>The simplified energy balance may be found by combining the equations above</p>
 <p><span id="eq-first-law6"><span class="math display">\[
 0 = I^2 R&#39;_e L - h \left( \pi D L\right) \left( T_s - T_{\infty}\right) - \varepsilon \sigma \left( \pi D L\right) \left( T_s^4 - T_{sur}^4\right)
 \tag{9}\]</span></span></p>
 <p>Inspecting the expression above, it may be seen that everything is known expect the surface temperature <span class="math inline">\(T_s\)</span> (while the current <span class="math inline">\(I\)</span> is not a fixed value it is still a known value). Similar to the <a href="01.Example%201.html">previous problem</a>, there is no closed-form solution. The Newton-Raphson method of root finding will be implemented again to reach a solution. The <code>newton_raphson</code> function is defined below.</p>
-<div id="2e1780d5" class="cell" data-execution_count="7">
+<div id="b7b2b020" class="cell" data-execution_count="7">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1"></a><span class="kw">def</span> newton_raphson(f, x, xFixed, tol <span class="op">=</span> <span class="fl">0.001</span>):</span>
 <span id="cb1-2"><a href="#cb1-2"></a>    h <span class="op">=</span> <span class="fl">0.000000001</span></span>
 <span id="cb1-3"><a href="#cb1-3"></a>    <span class="cf">while</span>(<span class="bu">abs</span>(f(x, xFixed)) <span class="op">&gt;</span> tol):</span>
@@ -3325,24 +3325,24 @@ A = \pi D L = 31.4 cm ** 2
 <span id="cb1-6"><a href="#cb1-6"></a>    <span class="cf">return</span> x</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>The heat transfer expression may now be defined as a python function. This is shown below.</p>
-<div id="8c69b6b0" class="cell" data-execution_count="9">
+<div id="9af5b597" class="cell" data-execution_count="9">
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1"></a><span class="kw">def</span> hx_expr(T_s, I):</span>
 <span id="cb2-2"><a href="#cb2-2"></a>    <span class="cf">return</span> I<span class="op">**</span><span class="dv">2</span><span class="op">*</span>R_e<span class="op">*</span>L <span class="op">-</span> h<span class="op">*</span>math.pi<span class="op">*</span>D<span class="op">*</span>L<span class="op">*</span>(T_s <span class="op">-</span> T_inf) <span class="op">-</span> es<span class="op">*</span>sig<span class="op">*</span>math.pi<span class="op">*</span>D<span class="op">*</span>L<span class="op">*</span>(T_s<span class="op">**</span><span class="dv">4</span> <span class="op">-</span> T_sur<span class="op">**</span><span class="dv">4</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>The range of the current values (<span class="math inline">\(I_{min} = 0\)</span> to <span class="math inline">\(I_{max} = 10\)</span>) may be defined using a Python list. The range is divided into <span class="math inline">\(50\)</span> intervals for good resolution on the plot.</p>
-<div id="035d29bf" class="cell" data-execution_count="11">
+<div id="4e3e8b8f" class="cell" data-execution_count="11">
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1"></a>intervals <span class="op">=</span> <span class="dv">50</span></span>
 <span id="cb3-2"><a href="#cb3-2"></a>I <span class="op">=</span> [val<span class="op">/</span>intervals <span class="cf">for</span> val <span class="kw">in</span> <span class="bu">range</span>(I_min<span class="op">*</span>intervals, I_max<span class="op">*</span>intervals <span class="op">+</span> <span class="dv">1</span>)]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>Now for every current value in the range, the surface temperature may be found. This is shown below.</p>
-<div id="797a966d" class="cell" data-execution_count="12">
+<div id="dd42dea4" class="cell" data-execution_count="12">
 <div class="sourceCode cell-code" id="cb4"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1"></a>T_s <span class="op">=</span> []</span>
 <span id="cb4-2"><a href="#cb4-2"></a><span class="cf">for</span> Ie <span class="kw">in</span> I:</span>
 <span id="cb4-3"><a href="#cb4-3"></a>    T_s.append(newton_raphson(hx_expr, <span class="dv">100</span>, Ie))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <hr>
 <p>The plot may now be generated. This is shown below.</p>
-<div id="35d03abf" class="cell" data-execution_count="13">
+<div id="f0d3992f" class="cell" data-execution_count="13">
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1"></a>fig, ax <span class="op">=</span> plt.subplots(<span class="dv">1</span>, <span class="dv">1</span>)</span>
 <span id="cb5-2"><a href="#cb5-2"></a>ax.plot(I, T_s)</span>
 <span id="cb5-3"><a href="#cb5-3"></a>ax.set_xlabel(<span class="st">&#39;Current, $I</span><span class="ch">\\</span><span class="st"> </span><span class="ch">\\</span><span class="st">left(A </span><span class="ch">\\</span><span class="st">right)$&#39;</span>)</span>
