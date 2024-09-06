@@ -3225,20 +3225,20 @@ window.Quarto = {
 
 <section id="given" class="level2">
 <h2 class="anchored" data-anchor-id="given">Given:</h2>
-<p>A batt of glass fiber insulation has a density of <span class="math inline">\(28 kg / m ** 3\)</span>.</p>
+<p>A batt of glass fiber insulation has a density of <span class="math inline">\(28\ \frac{\mathrm{kg}}{\mathrm{m}^{3}}\)</span>.</p>
 </section>
 <section id="required" class="level2">
 <h2 class="anchored" data-anchor-id="required">Required:</h2>
-<p>Determine the maximum and minimum possible values of the effective thermal conductivity of the insulation at a temperature of <span class="math inline">\(300 K\)</span>. How does this compare to the values reported in Table A.3?</p>
+<p>Determine the maximum and minimum possible values of the effective thermal conductivity of the insulation at a temperature of <span class="math inline">\(300\ \mathrm{K}\)</span>. How does this compare to the values reported in Table A.3?</p>
 </section>
 <section id="solution" class="level2">
 <h2 class="anchored" data-anchor-id="solution">Solution:</h2>
 <p>Start first by defining all of the given values.</p>
-<p><span class="math display">\[\rho = 28 kg / m ** 3\]</span> <span class="math display">\[T = 300 K\]</span></p>
+<p><span class="math display">\[\rho = 28\ \frac{\mathrm{kg}}{\mathrm{m}^{3}}\]</span> <span class="math display">\[T = 300\ \mathrm{K}\]</span></p>
 <p>Glass fiber insulation is made from glass fibers and the voids are filled with air. Thus for this arrangement, the solid portion of the thermal conductivity will be considered the glass fibers and the fluid power of the thermal conductivity will be considered the air. Going to Table A.3 for Glass, it may be seen that there is no option for fiber glass. The only two options are Plate and Pyrex. For this analysis it will be assumed that the fiber glass in the insulation is closer to plate glass than Pyrex glass. Thus the properties are</p>
-<p><span class="math display">\[\rho_s = 2500 kg / m ** 3\]</span> <span class="math display">\[k_s = 1.4 W / K / m\]</span></p>
-<p>Going to Table A.4 for Air at <span class="math inline">\(300 K\)</span> shows</p>
-<p><span class="math display">\[\rho_f = 1.1614 kg / m ** 3\]</span> <span class="math display">\[k_f = 0.0263 W / K / m\]</span></p>
+<p><span class="math display">\[\rho_s = 2500\ \frac{\mathrm{kg}}{\mathrm{m}^{3}}\]</span> <span class="math display">\[k_s = 1.4\ \frac{\mathrm{W}}{\left(\mathrm{K} \cdot \mathrm{m}\right)}\]</span></p>
+<p>Going to Table A.4 for Air at <span class="math inline">\(300\ \mathrm{K}\)</span> shows</p>
+<p><span class="math display">\[\rho_f = 1.1614\ \frac{\mathrm{kg}}{\mathrm{m}^{3}}\]</span> <span class="math display">\[k_f = 0.0263\ \frac{\mathrm{W}}{\left(\mathrm{K} \cdot \mathrm{m}\right)}\]</span></p>
 <p>To find the volume fraction of the fluid portion, the total mass of a unit cube of the insulation may be looked at. This unit cube total mass will be <span class="math inline">\(m_t\)</span>. This is equal to some portion of solid mass <span class="math inline">\(m_s\)</span> and some portion of fluid mass <span class="math inline">\(m_f\)</span>. This is shown below.</p>
 <p><span class="math display">\[
 m_t=m_s+m_f
@@ -3276,13 +3276,13 @@ V_t=V_s+V_f
 <p>The minimum effective thermal conductivity is then given by</p>
 <hr>
 <div class="answer">
-<p><span class="math inline">\(Answer: k_{eff,min} = \frac{1}{\frac{1-\varepsilon}{k_s}+\frac{\varepsilon}{k_f}} = 0.0266 W / K / m\)</span></p>
+<p><span class="math inline">\(Answer: k_{eff,min} = \frac{1}{\frac{1-\varepsilon}{k_s}+\frac{\varepsilon}{k_f}} = 0.0266\ \frac{\mathrm{W}}{\left(\mathrm{K} \cdot \mathrm{m}\right)}\)</span></p>
 </div>
 <hr>
 <p>The maximum effective thermal conductivity is then given by</p>
 <hr>
 <div class="answer">
-<p>Answer: <span class="math inline">\(k_{eff,max} = \varepsilon k_f+(1-\varepsilon) k_s = 0.0411 W / K / m\)</span></p>
+<p>Answer: <span class="math inline">\(k_{eff,max} = \varepsilon k_f+(1-\varepsilon) k_s = 0.0411\ \frac{\mathrm{W}}{\left(\mathrm{K} \cdot \mathrm{m}\right)}\)</span></p>
 </div>
 <hr>
 <p>Going to Table A.3 for Blanket and Batt Glass fiber, paper faced at a density of <span class="math inline">\(28 \frac{kg}{m^3}\)</span> shows that the thermal conductivity is <span class="math inline">\(0.038 \frac{W}{mK}\)</span>. This value falls between the calculated minimum and maximum values of the effective thermal conductivity.</p>
