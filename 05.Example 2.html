@@ -3225,7 +3225,7 @@ window.Quarto = {
 
 <section id="given" class="level2">
 <h2 class="anchored" data-anchor-id="given">Given:</h2>
-<p>A composite wall separates combustion gases at <span class="math inline">\(2600 °C\)</span> from a liquid coolant at <span class="math inline">\(100 °C\)</span>, with gas and liquid side convection coefficients of <span class="math inline">\(50 W / K / m ** 2\)</span> and <span class="math inline">\(1000 W / K / m ** 2\)</span>, respectively. The wall is composed of <span class="math inline">\(10 mm\)</span> thick layer of beryllium oxide on the gas side and a <span class="math inline">\(20 mm\)</span> thick slab of stainless steel (AISI 304) on the liquid side. The contact resistance between the oxide and the steel is <span class="math inline">\(0.05 K * m ** 2 / W\)</span>.</p>
+<p>A composite wall separates combustion gases at <span class="math inline">\(2600\ \mathrm{°C}\)</span> from a liquid coolant at <span class="math inline">\(100\ \mathrm{°C}\)</span>, with gas and liquid side convection coefficients of <span class="math inline">\(50\ \frac{\mathrm{W}}{\left(\mathrm{K} \cdot \mathrm{m}^{2}\right)}\)</span> and <span class="math inline">\(1000\ \frac{\mathrm{W}}{\left(\mathrm{K} \cdot \mathrm{m}^{2}\right)}\)</span>, respectively. The wall is composed of <span class="math inline">\(10\ \mathrm{mm}\)</span> thick layer of beryllium oxide on the gas side and a <span class="math inline">\(20\ \mathrm{mm}\)</span> thick slab of stainless steel (AISI 304) on the liquid side. The contact resistance between the oxide and the steel is <span class="math inline">\(0.05\ \frac{\mathrm{K} \cdot \mathrm{m}^{2}}{\mathrm{W}}\)</span>.</p>
 </section>
 <section id="required" class="level2">
 <h2 class="anchored" data-anchor-id="required">Required:</h2>
@@ -3234,7 +3234,7 @@ window.Quarto = {
 <section id="solution" class="level2">
 <h2 class="anchored" data-anchor-id="solution">Solution:</h2>
 <p>Start first by defining all of the given values.</p>
-<p><span class="math display">\[T_{\infty,1} = 2600 °C = 2873.15 K\]</span> <span class="math display">\[T_{\infty,2} = 100 °C = 373.15 K\]</span> <span class="math display">\[h_1 = 50 W / K / m ** 2\]</span> <span class="math display">\[h_2 = 1000 W / K / m ** 2\]</span> <span class="math display">\[L_A = 10 mm\]</span> <span class="math display">\[L_B = 20 mm\]</span> <span class="math display">\[R_{tc}^{\prime\prime} = 0.05 K * m ** 2 / W\]</span></p>
+<p><span class="math display">\[T_{\infty,1} = 2600\ \mathrm{°C} = 2873.15\ \mathrm{K}\]</span> <span class="math display">\[T_{\infty,2} = 100\ \mathrm{°C} = 373.15\ \mathrm{K}\]</span> <span class="math display">\[h_1 = 50\ \frac{\mathrm{W}}{\left(\mathrm{K} \cdot \mathrm{m}^{2}\right)}\]</span> <span class="math display">\[h_2 = 1000\ \frac{\mathrm{W}}{\left(\mathrm{K} \cdot \mathrm{m}^{2}\right)}\]</span> <span class="math display">\[L_A = 10\ \mathrm{mm}\]</span> <span class="math display">\[L_B = 20\ \mathrm{mm}\]</span> <span class="math display">\[R_{tc}^{\prime\prime} = 0.05\ \frac{\mathrm{K} \cdot \mathrm{m}^{2}}{\mathrm{W}}\]</span></p>
 <p>A drawing of the system is shown below.</p>
 <div id="fig-system-diagram" class="quarto-float quarto-figure quarto-figure-center anchored" alt="System Diagram">
 <figure class="quarto-float quarto-float-fig figure">
@@ -3248,14 +3248,14 @@ Figure 1: System Diagram
 </div>
 <p>Section A and B are the beryllium oxide and stainless steel, respectively. Their material properties may be found from the Appendix. However, evaluating material properties at a given temperature is problematic because the two materials are not at a constant temperature and not all temperature points are known (e.g., the temperature on either side of the material interface). For the most accurate solution, an iterative approach must be used. However, this can be quite time consuming and tedious. For the solution presented below, a guess will be made for the temperatures at which the material property will be evaluated. The guess value here will be the average of the two extreme temperatures.</p>
 <p><span class="math display">\[
-\bar{T} = \frac{T_{\infty1}+T_{\infty2}}{2} = 1623.2 K = 1350.0 °C
+\bar{T} = \frac{T_{\infty1}+T_{\infty2}}{2} = 1623.2\ \mathrm{K} = 1350.0\ \mathrm{°C}
 \]</span></p>
 <p>From Table A.2 for beryllium oxide at <span class="math inline">\(\bar{T}\)</span> shows that interpolation is needed for the thermal conductivity. This is shown below.</p>
-<p><span class="math display">\[T_1 = 1500 K\]</span> <span class="math display">\[T_2 = 2000 K\]</span> <span class="math display">\[k_1 = 21.5 W / K / m\]</span> <span class="math display">\[k_2 = 15 W / K / m\]</span> <span class="math display">\[
-k_A = (\frac{\bar{T} - T_1}{T_2 - T_1}) (k_2 - k_1) + k_1 = 19.9 W / K / m
+<p><span class="math display">\[T_1 = 1500\ \mathrm{K}\]</span> <span class="math display">\[T_2 = 2000\ \mathrm{K}\]</span> <span class="math display">\[k_1 = 21.5\ \frac{\mathrm{W}}{\left(\mathrm{K} \cdot \mathrm{m}\right)}\]</span> <span class="math display">\[k_2 = 15\ \frac{\mathrm{W}}{\left(\mathrm{K} \cdot \mathrm{m}\right)}\]</span> <span class="math display">\[
+k_A = (\frac{\bar{T} - T_1}{T_2 - T_1}) (k_2 - k_1) + k_1 = 19.9\ \frac{\mathrm{W}}{\left(\mathrm{K} \cdot \mathrm{m}\right)}
 \]</span></p>
 <p>For stainless steel (AISI 304), Table A.1 only goes up to <span class="math inline">\(T=1500K\)</span> so this value will be used. This is shown below.</p>
-<p><span class="math display">\[k_B = 31.7 W / K / m\]</span></p>
+<p><span class="math display">\[k_B = 31.7\ \frac{\mathrm{W}}{\left(\mathrm{K} \cdot \mathrm{m}\right)}\]</span></p>
 <p>A thermal circuit may be drawn to represent the system. This is shown below.</p>
 <div id="fig-thermal-circuit" class="quarto-float quarto-figure quarto-figure-center anchored" alt="Thermal Circuit">
 <figure class="quarto-float quarto-float-fig figure">
@@ -3269,29 +3269,29 @@ Figure 2: Thermal Circuit
 </div>
 <p>From the thermal circuit it may be seen that the total thermal resistance is</p>
 <p><span class="math display">\[
-R_{tot}^{\prime\prime} = \frac{1}{h_1}+\frac{L_A}{k_A}+R_{tc}^{\prime\prime}+\frac{L_B}{k_B}+\frac{1}{h_2} = 0.07213 K * m ** 2 / W
+R_{tot}^{\prime\prime} = \frac{1}{h_1}+\frac{L_A}{k_A}+R_{tc}^{\prime\prime}+\frac{L_B}{k_B}+\frac{1}{h_2} = 0.07213\ \frac{\mathrm{K} \cdot \mathrm{m}^{2}}{\mathrm{W}}
 \]</span></p>
 <p>The heat flux may then be found by</p>
 <hr>
 <div class="answer">
-<p><span class="math inline">\(Answer: q^{\prime\prime} = \frac{T_{\infty1}-T_{\infty2}}{R_{tot}^{\prime\prime}} = 34.66 kW / m ** 2\)</span></p>
+<p><span class="math inline">\(Answer: q^{\prime\prime} = \frac{T_{\infty1}-T_{\infty2}}{R_{tot}^{\prime\prime}} = 34.66\ \frac{\mathrm{kW}}{\mathrm{m}^{2}}\)</span></p>
 </div>
 <hr>
 <p>To determine the temperature distribution, the temperature at each node must be determined. This is shown below. <span class="math inline">\(T_1\)</span> may be found by</p>
 <p><span class="math display">\[
-T_1 = T_{\infty1}-q^{\prime\prime} \frac{1}{h_1} = 2180.0 K = 1906.8 °C
+T_1 = T_{\infty1}-q^{\prime\prime} \frac{1}{h_1} = 2180.0\ \mathrm{K} = 1906.8\ \mathrm{°C}
 \]</span></p>
 <p><span class="math inline">\(T_{i,A}\)</span> may be found by</p>
 <p><span class="math display">\[
-T_{i,A} = T_1-q^{\prime\prime} \frac{L_A}{k_A} = 2162.6 K = 1889.4 °C
+T_{i,A} = T_1-q^{\prime\prime} \frac{L_A}{k_A} = 2162.6\ \mathrm{K} = 1889.4\ \mathrm{°C}
 \]</span></p>
 <p><span class="math inline">\(T_{i,B}\)</span> may be found by</p>
 <p><span class="math display">\[
-T_{i,B} = T_{iA}-q^{\prime\prime} R_{tc}^{\prime\prime} = 429.7 K = 156.5 °C
+T_{i,B} = T_{iA}-q^{\prime\prime} R_{tc}^{\prime\prime} = 429.7\ \mathrm{K} = 156.5\ \mathrm{°C}
 \]</span></p>
 <p><span class="math inline">\(T_2\)</span> may be found by</p>
 <p><span class="math display">\[
-T_2 = T_{iB}-q^{\prime\prime} \frac{L_B}{k_B} = 407.8 K = 134.7 °C
+T_2 = T_{iB}-q^{\prime\prime} \frac{L_B}{k_B} = 407.8\ \mathrm{K} = 134.7\ \mathrm{°C}
 \]</span></p>
 <p>Now that all the temperature nodes are determined, the temperature distribution may be sketched. This is shown below.</p>
 <hr>
