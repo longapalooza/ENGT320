@@ -3246,7 +3246,7 @@ window.Quarto = {
     <div>
     <div class="quarto-title-meta-heading">Modified</div>
     <div class="quarto-title-meta-contents">
-      <p class="date-modified">Th 2024-09-05 11:29</p>
+      <p class="date-modified">Fr 2024-09-06 06:29</p>
     </div>
   </div>
     
@@ -3259,7 +3259,7 @@ window.Quarto = {
 
 <section id="given" class="level2">
 <h2 class="anchored" data-anchor-id="given">Given:</h2>
-<p>The blades of a wind turbine, as seen in <a href="#fig-wind-turbine" class="quarto-xref">Figure 1</a>, turn a large shaft at a relatively slow speed. The rotational speed is increased by a gearbox that has an efficiency shown below. In turn, the gearbox output shaft drives an electric generator with an efficiency also shown below. The cylindrical nacelle, which houses the gearbox, generator, and associated equipment, is <span class="math inline">\(6 m\)</span> long and has a diameter of <span class="math inline">\(3 m\)</span>. The turbine produces <span class="math inline">\(2.5 MW\)</span> of electrical power, and the air and surroundings temperatures are <span class="math inline">\(25 °C\)</span> and <span class="math inline">\(20 °C\)</span>, respectively. The emissivity of the nacelle is <span class="math inline">\(0.83\)</span>, and the convective heat transfer coefficient is <span class="math inline">\(35 W / K / m ** 2\)</span>. The surface of the nacelle that is adjacent to the blade hub can be considered to be adiabatic.</p>
+<p>The blades of a wind turbine, as seen in <a href="#fig-wind-turbine" class="quarto-xref">Figure 1</a>, turn a large shaft at a relatively slow speed. The rotational speed is increased by a gearbox that has an efficiency shown below. In turn, the gearbox output shaft drives an electric generator with an efficiency also shown below. The cylindrical nacelle, which houses the gearbox, generator, and associated equipment, is <span class="math inline">\(6\ \mathrm{m}\)</span> long and has a diameter of <span class="math inline">\(3\ \mathrm{m}\)</span>. The turbine produces <span class="math inline">\(2.5\ \mathrm{MW}\)</span> of electrical power, and the air and surroundings temperatures are <span class="math inline">\(25\ \mathrm{°C}\)</span> and <span class="math inline">\(20\ \mathrm{°C}\)</span>, respectively. The emissivity of the nacelle is <span class="math inline">\(0.83\)</span>, and the convective heat transfer coefficient is <span class="math inline">\(35\ \frac{\mathrm{W}}{\left(\mathrm{K} \cdot \mathrm{m}^{2}\right)}\)</span>. The surface of the nacelle that is adjacent to the blade hub can be considered to be adiabatic.</p>
 <div id="fig-wind-turbine" class="quarto-float quarto-figure quarto-figure-center anchored" alt="Wind Turbine">
 <figure class="quarto-float quarto-float-fig figure">
 <figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-fig" id="fig-wind-turbine-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
@@ -3278,9 +3278,9 @@ Figure 1: Wind Turbine
 <section id="solution" class="level2">
 <h2 class="anchored" data-anchor-id="solution">Solution:</h2>
 <p>Start first by defining all of the given values.</p>
-<p><span class="math display">\[\eta_{gb} = 0.93\]</span> <span class="math display">\[\eta_{gen} = 0.95\]</span> <span class="math display">\[L = 6 m\]</span> <span class="math display">\[D = 3 m\]</span> <span class="math display">\[P = 2.5 MW\]</span> <span class="math display">\[T_\infty = 25 °C\]</span> <span class="math display">\[T_{sur} = 20 °C\]</span> <span class="math display">\[\varepsilon = 0.83\]</span> <span class="math display">\[h = 35 W / K / m ** 2\]</span></p>
+<p><span class="math display">\[\eta_{gb} = 0.93\]</span> <span class="math display">\[\eta_{gen} = 0.95\]</span> <span class="math display">\[L = 6\ \mathrm{m}\]</span> <span class="math display">\[D = 3\ \mathrm{m}\]</span> <span class="math display">\[P = 2.5\ \mathrm{MW}\]</span> <span class="math display">\[T_\infty = 25\ \mathrm{°C}\]</span> <span class="math display">\[T_{sur} = 20\ \mathrm{°C}\]</span> <span class="math display">\[\varepsilon = 0.83\]</span> <span class="math display">\[h = 35\ \frac{\mathrm{W}}{\left(\mathrm{K} \cdot \mathrm{m}^{2}\right)}\]</span></p>
 <p>Another known quantity that will be used is the Stefan-Boltzman constant which is shown below.</p>
-<p><span class="math display">\[\sigma = 5.67e-08 W / K ** 4 / m ** 2\]</span></p>
+<p><span class="math display">\[\sigma = 5.67\times 10^{-8}\ \frac{\mathrm{W}}{\left(\mathrm{K}^{4} \cdot \mathrm{m}^{2}\right)}\]</span></p>
 <p><a href="#eq-first-law" class="quarto-xref">Equation 1</a> shows the 1st Law of Thermodynamics</p>
 <p><span id="eq-first-law"><span class="math display">\[
 \frac{{dE}_{sys}}{dt} = \Sigma \dot{E}_{in} - \Sigma \dot{E}_{out}
@@ -3310,7 +3310,7 @@ Figure 1: Wind Turbine
 P=\eta_{gb}\eta_{gen}\dot{W}_{mech}
 \tag{7}\]</span></span></p>
 <p>The total heat transferred from the nacelle is then</p>
-<p><span id="eq-first-law8"><span class="math display">\[\dot{Q}_{tot} = \frac{P}{\eta_{gb} \eta_{gen}} - P = P   \left( \frac{1}{\eta_{gb} \eta_{gen}} - 1 \right) = 329.7 kW \tag{8}\]</span></span></p>
+<p><span id="eq-first-law8"><span class="math display">\[\dot{Q}_{tot} = \frac{P}{\eta_{gb} \eta_{gen}} - P = P   \left( \frac{1}{\eta_{gb} \eta_{gen}} - 1 \right) = 329.7\ \mathrm{kW} \tag{8}\]</span></span></p>
 <p>The total heat transferred from the nacelle is due to convection and radiation. Thus,</p>
 <p><span id="eq-first-law9"><span class="math display">\[
 \dot{Q}_{tot} = \dot{Q}_{conv} + \dot{Q}_{rad}
@@ -3328,10 +3328,10 @@ P=\eta_{gb}\eta_{gen}\dot{W}_{mech}
 \tag{12}\]</span></span></p>
 <p>Inspecting <a href="#eq-first-law12" class="quarto-xref">Equation 12</a>, it may be seen that the only unknown variable is the surface area and surface temperature. Assuming the surface temperature is very close to the desired inside temperature, the only variable that needs to be determined to reach the final solution is the surface area. The surface area is found by approximating the nacelle as a simple cylinder taking into account one of the cylinder’s end. This is shown below in <a href="#eq-area" class="quarto-xref">Equation 13</a>.</p>
 <p><span id="eq-area"><span class="math display">\[
-A = \pi L D + \frac{\pi}{4} D^2 = 63.62 m ** 2
+A = \pi L D + \frac{\pi}{4} D^2 = 63.62\ \mathrm{m}^{2}
 \tag{13}\]</span></span></p>
 <p>Now that the surface area is determined, the surface temperature may be found. Unfortunatly, there is no closed-form solution to find the surface temperature (since the expression is a fourth order polynominal). Python to the rescue! Python may be used to implement a root find technique (specifically the <a href="https://en.wikipedia.org/wiki/Newton%27s_method">Newton-Raphson Method</a>). The first step to implement this method is to define the solving algorithm. This is shown below.</p>
-<div id="6f4985d8" class="cell" data-execution_count="8">
+<div id="fd3a86fa" class="cell" data-execution_count="8">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1"></a><span class="kw">def</span> newton_raphson(f, x, tol <span class="op">=</span> <span class="fl">0.001</span>):</span>
 <span id="cb1-2"><a href="#cb1-2"></a>    h <span class="op">=</span> <span class="fl">0.000000001</span></span>
 <span id="cb1-3"><a href="#cb1-3"></a>    <span class="cf">while</span>(<span class="bu">abs</span>(f(x)) <span class="op">&gt;</span> tol):</span>
@@ -3340,18 +3340,18 @@ A = \pi L D + \frac{\pi}{4} D^2 = 63.62 m ** 2
 <span id="cb1-6"><a href="#cb1-6"></a>    <span class="cf">return</span> x</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>The next step is to define the heat transfer expression (<a href="#eq-first-law12" class="quarto-xref">Equation 12</a>) as a python function. This is shown below.</p>
-<div id="a90089d4" class="cell" data-execution_count="10">
+<div id="0ca8fb5f" class="cell" data-execution_count="10">
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1"></a><span class="kw">def</span> hx_expr(T_s):</span>
 <span id="cb2-2"><a href="#cb2-2"></a>    <span class="cf">return</span> Qdot_tot <span class="op">-</span> h<span class="op">*</span>A<span class="op">*</span>(T_s <span class="op">-</span> T_inf) <span class="op">-</span> es<span class="op">*</span>sig<span class="op">*</span>A<span class="op">*</span>(T_s<span class="op">**</span><span class="dv">4</span> <span class="op">-</span> T_sur<span class="op">**</span><span class="dv">4</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>The key here is to move all terms of the expression to one side (notice the <span class="math inline">\(\dot{Q}_{tot}\)</span> term is positive and all other terms are negative). It is also important to non-dimensionalize all the quantities involved into base units so that the <code>newton_raphson</code> function will work properly. Now that the heat transfer expression is defined as a function, we may use the Newton-Raphson method. This is shown below.</p>
-<div id="d46ce431" class="cell" data-execution_count="11">
+<div id="5706d634" class="cell" data-execution_count="11">
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1"></a>T_s <span class="op">=</span> newton_raphson(hx_expr, <span class="dv">100</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>The <span class="math inline">\(100\)</span> is provide as an initial guess of <span class="math inline">\(100 K\)</span> for the root find technique. The method finds the solution as</p>
 <hr>
 <div class="answer">
-<p>Answer: <span class="math inline">\(T_s = 415.9 K = 142.8 °C\)</span></p>
+<p>Answer: <span class="math inline">\(T_s = 415.9\ \mathrm{K} = 142.8\ \mathrm{°C}\)</span></p>
 </div>
 <hr>
 </section>
