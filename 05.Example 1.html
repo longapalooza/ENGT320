@@ -3225,22 +3225,22 @@ window.Quarto = {
 
 <section id="given" class="level2">
 <h2 class="anchored" data-anchor-id="given">Given:</h2>
-<p>Consider a person that has a layer of skin/fat covered with a special sporting gear suit, with the outer surface exposed to air at a temperature of <span class="math inline">\(10 °C\)</span> with a convective heat transfer coefficient of <span class="math inline">\(2 W / K / m ** 2\)</span>. The inner surface (under the layer of skin/fat) is maintained at a constant temperature of <span class="math inline">\(35 °C\)</span> through a process called <a href="https://en.wikipedia.org/wiki/Thermoregulation">thermoregulation</a>. The skin/fat layer has a thickness of <span class="math inline">\(3 mm\)</span> and an effective thermal conductivity of <span class="math inline">\(0.3 W / K / m\)</span>. The total surface area of the skin/fat is <span class="math inline">\(1.8 m ** 2\)</span>. The special sporting gear suit has a thermal conductivity of <span class="math inline">\(0.014 W / K / m\)</span>. The emissivity of the outer surface of the special sporting gear suit is <span class="math inline">\(0.95\)</span>.</p>
+<p>Consider a person that has a layer of skin/fat covered with a special sporting gear suit, with the outer surface exposed to air at a temperature of <span class="math inline">\(10\ \mathrm{°C}\)</span> with a convective heat transfer coefficient of <span class="math inline">\(2\ \frac{\mathrm{W}}{\left(\mathrm{K} \cdot \mathrm{m}^{2}\right)}\)</span>. The inner surface (under the layer of skin/fat) is maintained at a constant temperature of <span class="math inline">\(35\ \mathrm{°C}\)</span> through a process called <a href="https://en.wikipedia.org/wiki/Thermoregulation">thermoregulation</a>. The skin/fat layer has a thickness of <span class="math inline">\(3\ \mathrm{mm}\)</span> and an effective thermal conductivity of <span class="math inline">\(0.3\ \frac{\mathrm{W}}{\left(\mathrm{K} \cdot \mathrm{m}\right)}\)</span>. The total surface area of the skin/fat is <span class="math inline">\(1.8\ \mathrm{m}^{2}\)</span>. The special sporting gear suit has a thermal conductivity of <span class="math inline">\(0.014\ \frac{\mathrm{W}}{\left(\mathrm{K} \cdot \mathrm{m}\right)}\)</span>. The emissivity of the outer surface of the special sporting gear suit is <span class="math inline">\(0.95\)</span>.</p>
 </section>
 <section id="required" class="level2">
 <h2 class="anchored" data-anchor-id="required">Required:</h2>
-<p>What thickness of the sporting gear suit is needed to reduce the heat loss rate to <span class="math inline">\(100 W\)</span>? What is the resulting skin temperature?</p>
+<p>What thickness of the sporting gear suit is needed to reduce the heat loss rate to <span class="math inline">\(100\ \mathrm{W}\)</span>? What is the resulting skin temperature?</p>
 </section>
 <section id="solution" class="level2">
 <h2 class="anchored" data-anchor-id="solution">Solution:</h2>
 <p>Start first by defining all of the given values.</p>
-<p><span class="math display">\[T_{\infty} = 10 °C = 283.15 K\]</span> <span class="math display">\[h = 2 W / K / m ** 2\]</span> <span class="math display">\[T_i = 35 °C = 308.15 K\]</span> <span class="math display">\[L_{sf} = 3 mm\]</span> <span class="math display">\[k_{sf} = 0.3 W / K / m\]</span> <span class="math display">\[A = 1.8 m ** 2\]</span> <span class="math display">\[k_{ins} = 0.014 W / K / m\]</span> <span class="math display">\[\varepsilon = 0.95\]</span> <span class="math display">\[q = 100 W\]</span></p>
+<p><span class="math display">\[T_{\infty} = 10\ \mathrm{°C} = 283.15\ \mathrm{K}\]</span> <span class="math display">\[h = 2\ \frac{\mathrm{W}}{\left(\mathrm{K} \cdot \mathrm{m}^{2}\right)}\]</span> <span class="math display">\[T_i = 35\ \mathrm{°C} = 308.15\ \mathrm{K}\]</span> <span class="math display">\[L_{sf} = 3\ \mathrm{mm}\]</span> <span class="math display">\[k_{sf} = 0.3\ \frac{\mathrm{W}}{\left(\mathrm{K} \cdot \mathrm{m}\right)}\]</span> <span class="math display">\[A = 1.8\ \mathrm{m}^{2}\]</span> <span class="math display">\[k_{ins} = 0.014\ \frac{\mathrm{W}}{\left(\mathrm{K} \cdot \mathrm{m}\right)}\]</span> <span class="math display">\[\varepsilon = 0.95\]</span> <span class="math display">\[q = 100\ \mathrm{W}\]</span></p>
 <p>Since an emissivity is given, there must be radiation occurring. The surrounding temperature may be assumed the same as the air temperature although this is not always the case. This is shown below.</p>
 <p><span class="math display">\[
 T_{sur} = T_{\infty}
 \]</span></p>
 <p>Other known quantities that will be used are shown below.</p>
-<p><span class="math display">\[\sigma = 5.67e-08 W / K ** 4 / m ** 2\]</span></p>
+<p><span class="math display">\[\sigma = 5.67\times 10^{-8}\ \frac{\mathrm{W}}{\left(\mathrm{K}^{4} \cdot \mathrm{m}^{2}\right)}\]</span></p>
 <p>The drawing of the system is shown below.</p>
 <div id="fig-system-diagram" class="quarto-float quarto-figure quarto-figure-center anchored" alt="System Diagram">
 <figure class="quarto-float quarto-float-fig figure">
@@ -3270,12 +3270,12 @@ T_i-T_s=q\frac{L_{sf}}{k_{sf}A}
 <p>Solving for the skin temperature is then</p>
 <hr>
 <div class="answer">
-<p>Answer: <span class="math inline">\(T_s = T_i-q\frac{L_{sf}}{k_{sf} A} = 307.6 K = 34.4 °C\)</span></p>
+<p>Answer: <span class="math inline">\(T_s = T_i-q\frac{L_{sf}}{k_{sf} A} = 307.6\ \mathrm{K} = 34.4\ \mathrm{°C}\)</span></p>
 </div>
 <hr>
 <p>Looking at the circuit, it may be seen that the total thermal resistance may be found by</p>
 <p><span class="math display">\[
-R_{tot} = \frac{T_i-T_{\infty}}{q} = 0.25 Δ°C / W
+R_{tot} = \frac{T_i-T_{\infty}}{q} = 0.25\ \frac{\mathrm{Δ°C}}{\mathrm{W}}
 \]</span></p>
 <p>The total thermal resistance is also equal to</p>
 <p><span class="math display">\[
@@ -3293,15 +3293,15 @@ h_r=\varepsilon\sigma\left(T_1+T_{sur}\right)\left(T_1^2+T_{sur}^2\right)
 <p><u><strong>Iteration 1</strong></u></p>
 <p>An intelligent guess may be made for the first guess. It is reasonable to assume that <span class="math inline">\(T_1\)</span> will fall between <span class="math inline">\(T_i\)</span> and <span class="math inline">\(T_{\infty}\)</span> so the simple average of the two is used as the initial guess.</p>
 <p><span class="math display">\[
-T_1 = \frac{T_i + T_{\infty}}{2} = 295.6 K = 22.5 °C
+T_1 = \frac{T_i + T_{\infty}}{2} = 295.6\ \mathrm{K} = 22.5\ \mathrm{°C}
 \]</span></p>
 <p>Now the radiation heat transfer coefficient may be calculated.</p>
 <p><span class="math display">\[
-h_r = \varepsilon \sigma (T_1 + T_{sur}) (T_1^2 + T_{sur}^2) = 5.225 W / K / m ** 2
+h_r = \varepsilon \sigma (T_1 + T_{sur}) (T_1^2 + T_{sur}^2) = 5.225\ \frac{\mathrm{W}}{\left(\mathrm{K} \cdot \mathrm{m}^{2}\right)}
 \]</span></p>
 <p><span class="math inline">\(L_{ins}\)</span> may now be found by solving the total thermal resistance expression for it. This is shown below.</p>
 <p><span class="math display">\[
-L_{ins} = k_{ins} (A R_{tot}-\frac{L_{sf}}{k_{sf}}-\frac{1}{h + h_r}) = 4.222 mm
+L_{ins} = k_{ins} (A R_{tot}-\frac{L_{sf}}{k_{sf}}-\frac{1}{h + h_r}) = 4.222\ \mathrm{mm}
 \]</span></p>
 <p>Now comes the time to check the initial guess for <span class="math inline">\(T_1\)</span>. This may be accomplished by recognizing the temperature drop across the special sporting gear suit to be<br></p>
 <p><span class="math display">\[
@@ -3309,44 +3309,44 @@ T_s-T_1=q\frac{L_{ins}}{k_{ins}A}
 \]</span></p>
 <p>Solving for <span class="math inline">\(T_1\)</span> shows</p>
 <p><span class="math display">\[
-T_1^{\prime} = T_s-q\frac{L_{ins}}{k_{ins} A} = 290.8 K = 17.7 °C
+T_1^{\prime} = T_s-q\frac{L_{ins}}{k_{ins} A} = 290.8\ \mathrm{K} = 17.7\ \mathrm{°C}
 \]</span></p>
-<p>Since the temperature does not match the initial guess made for <span class="math inline">\(T_1\)</span> (i.e., <span class="math inline">\(T_1 = 22.5 °C \neq 17.7 °C = T_1^{\prime}\)</span>) a solution has not been reached and another iteration must be completed. This is shown below.<br></p>
+<p>Since the temperature does not match the initial guess made for <span class="math inline">\(T_1\)</span> (i.e., <span class="math inline">\(T_1 = 22.5\ \mathrm{°C} \neq 17.7\ \mathrm{°C} = T_1^{\prime}\)</span>) a solution has not been reached and another iteration must be completed. This is shown below.<br></p>
 <p><u><strong>Iteration 2</strong></u></p>
 <p>The second iteration starts by setting the last calculated value of <span class="math inline">\(T_1^{\prime}\)</span> to the guess for <span class="math inline">\(T_1\)</span>.</p>
-<p><span class="math display">\[T_1 = T_1^{\prime} = 290.8 K = 17.7 °C\]</span></p>
+<p><span class="math display">\[T_1 = T_1^{\prime} = 290.8\ \mathrm{K} = 17.7\ \mathrm{°C}\]</span></p>
 <p>The <span class="math inline">\(h_r\)</span> is then calculated with this new value.</p>
 <p><span class="math display">\[
-h_r = \varepsilon \sigma (T_1 + T_{sur}) (T_1^2 + T_{sur}^2) = 5.094 W / K / m ** 2
+h_r = \varepsilon \sigma (T_1 + T_{sur}) (T_1^2 + T_{sur}^2) = 5.094\ \frac{\mathrm{W}}{\left(\mathrm{K} \cdot \mathrm{m}^{2}\right)}
 \]</span></p>
 <p>Then the special sporting gear thickness is found with the updated value.</p>
 <p><span class="math display">\[
-L_{ins} = k_{ins} (A R_{tot}-\frac{L_{sf}}{k_{sf}}-\frac{1}{h + h_r}) = 4.187 mm
+L_{ins} = k_{ins} (A R_{tot}-\frac{L_{sf}}{k_{sf}}-\frac{1}{h + h_r}) = 4.187\ \mathrm{mm}
 \]</span></p>
 <p>Finally the initial guess of <span class="math inline">\(T_1\)</span> is checked.</p>
 <p><span class="math display">\[
-T_1^{\prime} = T_s-q\frac{L_{ins}}{k_{ins} A} = 291.0 K = 17.8 °C
+T_1^{\prime} = T_s-q\frac{L_{ins}}{k_{ins} A} = 291.0\ \mathrm{K} = 17.8\ \mathrm{°C}
 \]</span></p>
 <p>As can be seen, the temperature on this iteration is very close the initial guess for the temperature. This means that the iterative technique is close to having converged. One more iteration should do the trick. This is shown below.</p>
 <p><u><strong>Iteration 3</strong></u></p>
 <p>The third iteration starts by setting the last calculated value of <span class="math inline">\(T_1^{\prime}\)</span> to the guess for <span class="math inline">\(T_1\)</span>.</p>
-<p><span class="math display">\[T_1 = T_1^{\prime} = 291.0 K = 17.8 °C\]</span></p>
+<p><span class="math display">\[T_1 = T_1^{\prime} = 291.0\ \mathrm{K} = 17.8\ \mathrm{°C}\]</span></p>
 <p>The <span class="math inline">\(h_r\)</span> is then calculated with this new value.</p>
 <p><span class="math display">\[
-h_r = \varepsilon \sigma (T_1 + T_{sur}) (T_1^2 + T_{sur}^2) = 5.098 W / K / m ** 2
+h_r = \varepsilon \sigma (T_1 + T_{sur}) (T_1^2 + T_{sur}^2) = 5.098\ \frac{\mathrm{W}}{\left(\mathrm{K} \cdot \mathrm{m}^{2}\right)}
 \]</span></p>
 <p>Then the special sporting gear thickness is found with the updated value.</p>
 <p><span class="math display">\[
-L_{ins} = k_{ins} (A R_{tot}-\frac{L_{sf}}{k_{sf}}-\frac{1}{h + h_r}) = 4.188 mm
+L_{ins} = k_{ins} (A R_{tot}-\frac{L_{sf}}{k_{sf}}-\frac{1}{h + h_r}) = 4.188\ \mathrm{mm}
 \]</span></p>
 <p>Finally the initial guess of <span class="math inline">\(T_1\)</span> is checked.</p>
 <p><span class="math display">\[
-T_1^{\prime} = T_s-q\frac{L_{ins}}{k_{ins} A} = 291.0 K = 17.8 °C
+T_1^{\prime} = T_s-q\frac{L_{ins}}{k_{ins} A} = 291.0\ \mathrm{K} = 17.8\ \mathrm{°C}
 \]</span></p>
 <p>Since the temperature calculated here is the same as the initial guess for the temperature at the beginning of the iteration, the solution has converged. Thus the required sporting gear suit thickness required is</p>
 <hr>
 <div class="answer">
-<p>Answer: <span class="math inline">\(L_{ins} = 4.188 mm\)</span></p>
+<p>Answer: <span class="math inline">\(L_{ins} = 4.188\ \mathrm{mm}\)</span></p>
 </div>
 <hr>
 </section>
