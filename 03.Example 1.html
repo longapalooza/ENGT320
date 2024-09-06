@@ -3231,15 +3231,15 @@ T\left(x \right) = a + bx +c x^2
 \]</span></p>
 <p>where <span class="math inline">\(T\)</span> is in <span class="math inline">\(^\circ C\)</span> and <span class="math inline">\(x\)</span> is in meters, while <span class="math inline">\(a\)</span>, <span class="math inline">\(b\)</span>, and <span class="math inline">\(c\)</span> are as shown below.</p>
 <p><span class="math display">\[
-a=800 Δ°C
+a=800\ \mathrm{Δ°C}
 \]</span></p>
 <p><span class="math display">\[
-b=-300 Δ°C / m
+b=-300\ \frac{\mathrm{Δ°C}}{\mathrm{m}}
 \]</span></p>
 <p><span class="math display">\[
-c=-50 Δ°C / m ** 2
+c=-50\ \frac{\mathrm{Δ°C}}{\mathrm{m}^{2}}
 \]</span></p>
-<p>A uniform heat generation of <span class="math inline">\(\dot{q}=1000 W / m ** 3\)</span>, is present in the wall of area <span class="math inline">\(10 m ** 2\)</span> having properties as shown <a href="#fig-wall-diagram" class="quarto-xref">Figure 1</a>.</p>
+<p>A uniform heat generation of <span class="math inline">\(\dot{q}=1000\ \frac{\mathrm{W}}{\mathrm{m}^{3}}\)</span>, is present in the wall of area <span class="math inline">\(10\ \mathrm{m}^{2}\)</span> having properties as shown <a href="#fig-wall-diagram" class="quarto-xref">Figure 1</a>.</p>
 <div id="fig-wall-diagram" class="quarto-float quarto-figure quarto-figure-center anchored" alt="Wall Diagram">
 <figure class="quarto-float quarto-float-fig figure">
 <figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-fig" id="fig-wall-diagram-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
@@ -3253,12 +3253,12 @@ Figure 1: Wall Diagram
 </section>
 <section id="required" class="level2">
 <h2 class="anchored" data-anchor-id="required">Required:</h2>
-<p>Determine the rate of heat transfer entering and leaving the wall at <span class="math inline">\(x=0 m\)</span> and <span class="math inline">\(x=1 m\)</span>, respectively. Determine the rate of change of energy storage in the wall. Determine the time rate of temperature change at <span class="math inline">\(x=0 m\)</span>, <span class="math inline">\(0.25 m\)</span>, and <span class="math inline">\(0.5 m\)</span></p>
+<p>Determine the rate of heat transfer entering and leaving the wall at <span class="math inline">\(x=0\ \mathrm{m}\)</span> and <span class="math inline">\(x=1\ \mathrm{m}\)</span>, respectively. Determine the rate of change of energy storage in the wall. Determine the time rate of temperature change at <span class="math inline">\(x=0\ \mathrm{m}\)</span>, <span class="math inline">\(0.25\ \mathrm{m}\)</span>, and <span class="math inline">\(0.5\ \mathrm{m}\)</span></p>
 </section>
 <section id="solution" class="level2">
 <h2 class="anchored" data-anchor-id="solution">Solution:</h2>
 <p>Start first by defining all of the given values.</p>
-<p><span class="math display">\[L = 1 m\]</span> <span class="math display">\[a = 800 Δ°C\]</span> <span class="math display">\[b = -300 Δ°C / m\]</span> <span class="math display">\[c = -50 Δ°C / m ** 2\]</span> <span class="math display">\[\dot{q} = 1000 W / m ** 3\]</span> <span class="math display">\[A = 10 m ** 2\]</span> <span class="math display">\[k = 40 W / K / m\]</span> <span class="math display">\[\rho = 1600 kg / m ** 3\]</span> <span class="math display">\[c_p = 4 kJ / K / kg\]</span> <span class="math display">\[x_{a_1} = 0 m\]</span> <span class="math display">\[x_{a_2} = 1 m\]</span> <span class="math display">\[x_{c_1} = 0 m\]</span> <span class="math display">\[x_{c_2} = 0.25 m\]</span> <span class="math display">\[x_{c_3} = 0.5 m\]</span></p>
+<p><span class="math display">\[L = 1\ \mathrm{m}\]</span> <span class="math display">\[a = 800\ \mathrm{Δ°C}\]</span> <span class="math display">\[b = -300\ \frac{\mathrm{Δ°C}}{\mathrm{m}}\]</span> <span class="math display">\[c = -50\ \frac{\mathrm{Δ°C}}{\mathrm{m}^{2}}\]</span> <span class="math display">\[\dot{q} = 1000\ \frac{\mathrm{W}}{\mathrm{m}^{3}}\]</span> <span class="math display">\[A = 10\ \mathrm{m}^{2}\]</span> <span class="math display">\[k = 40\ \frac{\mathrm{W}}{\left(\mathrm{K} \cdot \mathrm{m}\right)}\]</span> <span class="math display">\[\rho = 1600\ \frac{\mathrm{kg}}{\mathrm{m}^{3}}\]</span> <span class="math display">\[c_p = 4\ \frac{\mathrm{kJ}}{\left(\mathrm{K} \cdot \mathrm{kg}\right)}\]</span> <span class="math display">\[x_{a_1} = 0\ \mathrm{m}\]</span> <span class="math display">\[x_{a_2} = 1\ \mathrm{m}\]</span> <span class="math display">\[x_{c_1} = 0\ \mathrm{m}\]</span> <span class="math display">\[x_{c_2} = 0.25\ \mathrm{m}\]</span> <span class="math display">\[x_{c_3} = 0.5\ \mathrm{m}\]</span></p>
 <p>Looking at the system, it may be seen that it is 1D, an isotropic material, and has uniform heat generation. It may be seen that within the system, only conduction occurs. Thus the following expression is true for within the system.</p>
 <p><span class="math display">\[
 q\left(x\right)=-kA \frac{\partial T}{\partial x}
@@ -3271,23 +3271,23 @@ q\left(x\right)=-kA \frac{\partial T}{\partial x}
 <p><span class="math display">\[
 0=\Sigma \dot{E}_{in}-\Sigma \dot{E}_{out}
 \]</span></p>
-<p>The energy coming in is <span class="math inline">\(q_{in}\)</span> and the energy leaving is the conduction term at <span class="math inline">\(x=0 m\)</span>. This is shown below.</p>
+<p>The energy coming in is <span class="math inline">\(q_{in}\)</span> and the energy leaving is the conduction term at <span class="math inline">\(x=0\ \mathrm{m}\)</span>. This is shown below.</p>
 <p><span class="math display">\[
-0=q_{in}-q\left(x=0 m\right)
+0=q_{in}-q\left(x=0\ \mathrm{m}\right)
 \]</span></p>
 <p>Solving for <span class="math inline">\(q_{in}\)</span> shows</p>
 <p><span class="math display">\[
-q_{in}=q\left(x=0 m\right)=-kA \frac{\partial T}{\partial x}\Bigr\rvert_{x=0 m}=-kA \frac{\partial}{\partial x}\left( a+b x+c x^2\right)\Bigr\rvert_{x=0 m}=-kA \left( b+2c x\right)\Bigr\rvert_{x=0 m}
+q_{in}=q\left(x=0\ \mathrm{m}\right)=-kA \frac{\partial T}{\partial x}\Bigr\rvert_{x=0\ \mathrm{m}}=-kA \frac{\partial}{\partial x}\left( a+b x+c x^2\right)\Bigr\rvert_{x=0\ \mathrm{m}}=-kA \left( b+2c x\right)\Bigr\rvert_{x=0\ \mathrm{m}}
 \]</span></p>
 <hr>
 <div class="answer">
-<p>Answer (a1): <span class="math inline">\(q_{in} = -k A (b + 2 c x)\Bigr\rvert_{x=0 m} = 120.0 kW\)</span></p>
+<p>Answer (a1): <span class="math inline">\(q_{in} = -k A (b + 2 c x)\Bigr\rvert_{x=0\ \mathrm{m}} = 120.0\ \mathrm{kW}\)</span></p>
 </div>
 <hr>
 <p>A similar expression may be derived for the right side to determine <span class="math inline">\(q_{out}\)</span>. This is shown below.</p>
 <hr>
 <div class="answer">
-<p>Answer (a2): <span class="math inline">\(q_{out} = q\left(x=1 m\right) = -k A (b + 2 c x)\Bigr\rvert_{x=1 m} = 160.0 kW\)</span></p>
+<p>Answer (a2): <span class="math inline">\(q_{out} = q\left(x=1\ \mathrm{m}\right) = -k A (b + 2 c x)\Bigr\rvert_{x=1\ \mathrm{m}} = 160.0\ \mathrm{kW}\)</span></p>
 </div>
 <hr>
 <p>Using 1st Law for the entire system</p>
@@ -3309,7 +3309,7 @@ q_{in}=q\left(x=0 m\right)=-kA \frac{\partial T}{\partial x}\Bigr\rvert_{x=0 m}=
 <p>The overall energy balance then gives the overall energy storage rate of change in the wall which is</p>
 <hr>
 <div class="answer">
-<p>Answer (b): <span class="math inline">\(\dot{E}_{st} = q_{in}+A L \dot{q}-q_{out} = -30.0 kW\)</span></p>
+<p>Answer (b): <span class="math inline">\(\dot{E}_{st} = q_{in}+A L \dot{q}-q_{out} = -30.0\ \mathrm{kW}\)</span></p>
 </div>
 <hr>
 <p>To find the time rate of change of the temperature at any point in the medium the heat diffusion equation (HDE) can be used. Beginning with the full HDE.</p>
