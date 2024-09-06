@@ -3225,38 +3225,38 @@ window.Quarto = {
 
 <section id="given" class="level2">
 <h2 class="anchored" data-anchor-id="given">Given:</h2>
-<p>A <span class="math inline">\(50 mm\)</span> x <span class="math inline">\(45 mm\)</span> x <span class="math inline">\(20 mm\)</span> cell phone charger has a surface temperature of <span class="math inline">\(33 °C\)</span> when plugged into an electrical wall outlet but not in use. The surface of the charger has an emissivity of <span class="math inline">\(0.92\)</span> and is subject to a free convection heat transfer coefficient of <span class="math inline">\(4.5 W / K / m ** 2\)</span>. The room air and wall temperatures are <span class="math inline">\(22 °C\)</span> and <span class="math inline">\(20 °C\)</span>, respectively.</p>
+<p>A <span class="math inline">\(50\ \mathrm{mm}\)</span> x <span class="math inline">\(45\ \mathrm{mm}\)</span> x <span class="math inline">\(20\ \mathrm{mm}\)</span> cell phone charger has a surface temperature of <span class="math inline">\(33\ \mathrm{°C}\)</span> when plugged into an electrical wall outlet but not in use. The surface of the charger has an emissivity of <span class="math inline">\(0.92\)</span> and is subject to a free convection heat transfer coefficient of <span class="math inline">\(4.5\ \frac{\mathrm{W}}{\left(\mathrm{K} \cdot \mathrm{m}^{2}\right)}\)</span>. The room air and wall temperatures are <span class="math inline">\(22\ \mathrm{°C}\)</span> and <span class="math inline">\(20\ \mathrm{°C}\)</span>, respectively.</p>
 </section>
 <section id="required" class="level2">
 <h2 class="anchored" data-anchor-id="required">Required:</h2>
-<p>If electricity costs <span class="math inline">\(0.18 USD / h / kW\)</span>, determine the daily cost of leaving the charger plugged in when not in use.</p>
+<p>If electricity costs <span class="math inline">\(0.18\ \frac{\mathrm{USD}}{\left(\mathrm{h} \cdot \mathrm{kW}\right)}\)</span>, determine the daily cost of leaving the charger plugged in when not in use.</p>
 </section>
 <section id="solution" class="level2">
 <h2 class="anchored" data-anchor-id="solution">Solution:</h2>
 <p>Start first by defining all of the given values.</p>
-<p><span class="math display">\[H = 50 mm\]</span> <span class="math display">\[W = 45 mm\]</span> <span class="math display">\[D = 20 mm\]</span> <span class="math display">\[T_s = 33 °C\]</span> <span class="math display">\[\varepsilon = 0.92\]</span> <span class="math display">\[h = 4.5 W / K / m ** 2\]</span> <span class="math display">\[T_\infty = 22 °C\]</span> <span class="math display">\[T_{sur} = 20 °C\]</span> <span class="math display">\[C = 0.18 USD / h / kW\]</span></p>
+<p><span class="math display">\[H = 50\ \mathrm{mm}\]</span> <span class="math display">\[W = 45\ \mathrm{mm}\]</span> <span class="math display">\[D = 20\ \mathrm{mm}\]</span> <span class="math display">\[T_s = 33\ \mathrm{°C}\]</span> <span class="math display">\[\varepsilon = 0.92\]</span> <span class="math display">\[h = 4.5\ \frac{\mathrm{W}}{\left(\mathrm{K} \cdot \mathrm{m}^{2}\right)}\]</span> <span class="math display">\[T_\infty = 22\ \mathrm{°C}\]</span> <span class="math display">\[T_{sur} = 20\ \mathrm{°C}\]</span> <span class="math display">\[C = 0.18\ \frac{\mathrm{USD}}{\left(\mathrm{h} \cdot \mathrm{kW}\right)}\]</span></p>
 <p>Another known quantity that will be used is the Stefan-Boltzman constant. It is shown below.</p>
-<p><span class="math display">\[\sigma = 5.67e-08 W / K ** 4 / m ** 2\]</span></p>
+<p><span class="math display">\[\sigma = 5.67\times 10^{-8}\ \frac{\mathrm{W}}{\left(\mathrm{K}^{4} \cdot \mathrm{m}^{2}\right)}\]</span></p>
 <p>Two types of heat transfer are occurring for this system, convection and radiation. The surface area that is in play is the same for both convection and radiation and is given in <a href="#eq-surface-area" class="quarto-xref">Equation 1</a>.</p>
 <p><span id="eq-surface-area"><span class="math display">\[
-A_s = H W + 2 H D + 2 W D = 6050 mm ** 2
+A_s = H W + 2 H D + 2 W D = 6050\ \mathrm{mm}^{2}
 \tag{1}\]</span></span></p>
-<p>It is also important to note one of the <span class="math inline">\(50 mm\)</span> x <span class="math inline">\(45 mm\)</span> sides is against the wall so it is not included in the surface area calculation. The convection portion is given by</p>
+<p>It is also important to note one of the <span class="math inline">\(50\ \mathrm{mm}\)</span> x <span class="math inline">\(45\ \mathrm{mm}\)</span> sides is against the wall so it is not included in the surface area calculation. The convection portion is given by</p>
 <p><span id="eq-convection"><span class="math display">\[
-q_{conv} = h A_s (T_s - T_\infty) = 299.5 mW
+q_{conv} = h A_s (T_s - T_\infty) = 299.5\ \mathrm{mW}
 \tag{2}\]</span></span></p>
 <p>The radiation portion is given by</p>
 <p><span id="eq-radiation"><span class="math display">\[
-q_{rad} = \varepsilon \sigma A_s (T_s^4 - T_{sur}^4) = 441.8 mW
+q_{rad} = \varepsilon \sigma A_s (T_s^4 - T_{sur}^4) = 441.8\ \mathrm{mW}
 \tag{3}\]</span></span></p>
 <p>The total heat transfer from the charger is then</p>
 <p><span id="eq-radiation"><span class="math display">\[
-\dot{E}_{tot} = q_{conv} + q_{rad} = 741.2 mW
+\dot{E}_{tot} = q_{conv} + q_{rad} = 741.2\ \mathrm{mW}
 \tag{4}\]</span></span></p>
 <p>The cost to leave the charger plugged in all day is then</p>
 <hr>
 <div class="answer">
-<p>Answer: <span class="math inline">\(C_{tot} = C \dot{E}_{tot} = 0.0032 USD / d\)</span></p>
+<p>Answer: <span class="math inline">\(C_{tot} = C \dot{E}_{tot} = 0.0032\ \frac{\mathrm{USD}}{\mathrm{d}}\)</span></p>
 </div>
 <hr>
 </section>
