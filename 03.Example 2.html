@@ -3225,37 +3225,37 @@ window.Quarto = {
 
 <section id="given" class="level2">
 <h2 class="anchored" data-anchor-id="given">Given:</h2>
-<p>Uniform internal heat generation of <span class="math inline">\(50.0 MW / m ** 3\)</span> is occurring in a cylindrical nuclear reactor fuel rod of <span class="math inline">\(50 mm\)</span> diameter, and under steady state conditions the temperature distribution is of the form</p>
+<p>Uniform internal heat generation of <span class="math inline">\(50.0\ \frac{\mathrm{MW}}{\mathrm{m}^{3}}\)</span> is occurring in a cylindrical nuclear reactor fuel rod of <span class="math inline">\(50\ \mathrm{mm}\)</span> diameter, and under steady state conditions the temperature distribution is of the form</p>
 <p><span class="math display">\[
 T\left(r\right)=a+br^2
 \]</span></p>
 <p>where <span class="math inline">\(T\)</span> is in <span class="math inline">\(^\circ C\)</span> and <span class="math inline">\(r\)</span> in meters, while <span class="math inline">\(a\)</span> and <span class="math inline">\(b\)</span> are as indicated below. The fuel rod properties are shown below as well.</p>
 <p><span class="math display">\[
-a=800 Δ°C
+a=800\ \mathrm{Δ°C}
 \]</span></p>
 <p><span class="math display">\[
-b=-416700.0 Δ°C / m ** 2
+b=-416700.0\ \frac{\mathrm{Δ°C}}{\mathrm{m}^{2}}
 \]</span></p>
 <p><span class="math display">\[
-k=30 W / K / m
+k=30\ \frac{\mathrm{W}}{\left(\mathrm{K} \cdot \mathrm{m}\right)}
 \]</span></p>
-<p><span class="math display">\[\rho=1100 kg / m ** 3
+<p><span class="math display">\[\rho=1100\ \frac{\mathrm{kg}}{\mathrm{m}^{3}}
 \]</span></p>
 <p><span class="math display">\[
-c_p=800 J / K / kg
+c_p=800\ \frac{\mathrm{J}}{\left(\mathrm{K} \cdot \mathrm{kg}\right)}
 \]</span></p>
 </section>
 <section id="required" class="level2">
 <h2 class="anchored" data-anchor-id="required">Required:</h2>
 <ol type="a">
-<li>What is the rate of heat transfer per unit length of the rod at <span class="math inline">\(r=0 mm\)</span> (the center line) and at <span class="math inline">\(r=25.0 mm\)</span> (the outer surface)?</li>
-<li>If the reactor power level is suddenly increased to <span class="math inline">\(100.0 MW / m ** 3\)</span>, what is the initial time rate of temperature change at the center line and rod surface?</li>
+<li>What is the rate of heat transfer per unit length of the rod at <span class="math inline">\(r=0\ \mathrm{mm}\)</span> (the center line) and at <span class="math inline">\(r=25.0\ \mathrm{mm}\)</span> (the outer surface)?</li>
+<li>If the reactor power level is suddenly increased to <span class="math inline">\(100.0\ \frac{\mathrm{MW}}{\mathrm{m}^{3}}\)</span>, what is the initial time rate of temperature change at the center line and rod surface?</li>
 </ol>
 </section>
 <section id="solution" class="level2">
 <h2 class="anchored" data-anchor-id="solution">Solution:</h2>
 <p>Start first by defining all of the given values.</p>
-<p><span class="math display">\[\dot{q}_1 = 50.0 MW / m ** 3\]</span> <span class="math display">\[D = 50 mm\]</span> <span class="math display">\[a = 800 Δ°C\]</span> <span class="math display">\[b = -416700.0 Δ°C / m ** 2\]</span> <span class="math display">\[k = 30 W / K / m\]</span> <span class="math display">\[\rho = 1100 kg / m ** 3\]</span> <span class="math display">\[c_p = 800 J / K / kg\]</span> <span class="math display">\[r_{a1} = 0 mm\]</span> <span class="math display">\[r_{a2} = 25.0 mm\]</span> <span class="math display">\[\dot{q}_2 = 100.0 MW / m ** 3\]</span></p>
+<p><span class="math display">\[\dot{q}_1 = 50.0\ \frac{\mathrm{MW}}{\mathrm{m}^{3}}\]</span> <span class="math display">\[D = 50\ \mathrm{mm}\]</span> <span class="math display">\[a = 800\ \mathrm{Δ°C}\]</span> <span class="math display">\[b = -416700.0\ \frac{\mathrm{Δ°C}}{\mathrm{m}^{2}}\]</span> <span class="math display">\[k = 30\ \frac{\mathrm{W}}{\left(\mathrm{K} \cdot \mathrm{m}\right)}\]</span> <span class="math display">\[\rho = 1100\ \frac{\mathrm{kg}}{\mathrm{m}^{3}}\]</span> <span class="math display">\[c_p = 800\ \frac{\mathrm{J}}{\left(\mathrm{K} \cdot \mathrm{kg}\right)}\]</span> <span class="math display">\[r_{a1} = 0\ \mathrm{mm}\]</span> <span class="math display">\[r_{a2} = 25.0\ \mathrm{mm}\]</span> <span class="math display">\[\dot{q}_2 = 100.0\ \frac{\mathrm{MW}}{\mathrm{m}^{3}}\]</span></p>
 <p>The conduction within the cylindrical rod is given by</p>
 <p><span class="math display">\[
 q=-k A_r \frac{\partial T}{\partial r}
@@ -3283,8 +3283,8 @@ q&#39;=-2k\pi r \left(2br\right)=-4k\pi b r^2
 <p>The rate of heat transfer per unit length at the center line and outer surface is then</p>
 <hr>
 <div class="answer">
-<p>Answer (a1): <span class="math inline">\(q^{\prime}\Bigr\rvert_{r=0 mm} = -4 k \pi b r^2\Bigr\rvert_{r=0 mm} = 0.0 kW / m\)</span></p>
-<p>Answer (a2): <span class="math inline">\(q^{\prime}\Bigr\rvert_{r=25.0 mm} = -4 k \pi b r^2\Bigr\rvert_{r=25.0 mm} = 98.18 kW / m\)</span></p>
+<p>Answer (a1): <span class="math inline">\(q^{\prime}\Bigr\rvert_{r=0\ \mathrm{mm}} = -4 k \pi b r^2\Bigr\rvert_{r=0\ \mathrm{mm}} = 0.0\ \frac{\mathrm{kW}}{\mathrm{m}}\)</span></p>
+<p>Answer (a2): <span class="math inline">\(q^{\prime}\Bigr\rvert_{r=25.0\ \mathrm{mm}} = -4 k \pi b r^2\Bigr\rvert_{r=25.0\ \mathrm{mm}} = 98.18\ \frac{\mathrm{kW}}{\mathrm{m}}\)</span></p>
 </div>
 <hr>
 <p>In part (b), the system is no longer steady state so the heat diffusion equation (HDE) may be used. This is shown below.</p>
@@ -3318,7 +3318,7 @@ q&#39;=-2k\pi r \left(2br\right)=-4k\pi b r^2
 <p>Inspecting all the terms of the expression, it may be seen that the initial time rate of temperature change is not dependent upon position (i.e. there are no <span class="math inline">\(r\)</span> terms in the right hand side. Thus the initial time rate of temperature change at the center line and outer surface will be the same. This is found below.</p>
 <hr>
 <div class="answer">
-<p>Answer (b): <span class="math inline">\(\frac{\partial T}{\partial t} = \frac{4 b k}{\rho c_p}+\frac{\dot{q}}{\rho c_p} = 56.81 K / s\)</span></p>
+<p>Answer (b): <span class="math inline">\(\frac{\partial T}{\partial t} = \frac{4 b k}{\rho c_p}+\frac{\dot{q}}{\rho c_p} = 56.81\ \frac{\mathrm{K}}{\mathrm{s}}\)</span></p>
 </div>
 <hr>
 </section>
