@@ -3246,7 +3246,7 @@ window.Quarto = {
     <div>
     <div class="quarto-title-meta-heading">Modified</div>
     <div class="quarto-title-meta-contents">
-      <p class="date-modified">Fr 2024-09-06 07:07</p>
+      <p class="date-modified">Th 2024-09-26 08:05</p>
     </div>
   </div>
     
@@ -3271,7 +3271,7 @@ window.Quarto = {
 <section id="solution" class="level2">
 <h2 class="anchored" data-anchor-id="solution">Solution:</h2>
 <p>Start first by importing any needed libraries and defining the unit registry.</p>
-<div id="ff87ca84" class="cell" data-execution_count="4">
+<div id="7eeb2fec" class="cell" data-execution_count="4">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
 <span id="cb1-2"><a href="#cb1-2"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb1-3"><a href="#cb1-3"></a><span class="im">import</span> pint</span>
@@ -3308,43 +3308,38 @@ m=\sqrt{\frac{hP}{k A_c}}
 \]</span></p>
 <p>For a round fin with a constant cross sectional area, the <span class="math inline">\(P\)</span> and <span class="math inline">\(A_c\)</span> terms may be expressed as</p>
 <p><span class="math display">\[
-P=\pi D
+P = \pi D = 15.7\ \mathrm{mm}
+\]</span> <span class="math display">\[
+A_c = \frac{\pi}{4} D^2 = 19.6\ \mathrm{mm}^{2}
+\]</span></p>
+<p>For the different materials, the <span class="math inline">\(m\)</span> term is</p>
+<p><span class="math display">\[
+m_{cu} = \sqrt{\frac{h P}{k_{cu} A_c}} = 14.15\ \frac{1}{\mathrm{m}}
 \]</span></p>
 <p><span class="math display">\[
-A_c=\frac{\pi}{4}D^2
-\]</span></p>
-<p>The <span class="math inline">\(m\)</span> term then becomes</p>
-<p><span class="math display">\[
-m=\sqrt{\frac{4h}{kD}}
-\]</span></p>
-<p>For the different materials, this is</p>
-<p><span class="math display">\[
-m_{cu} = \sqrt{\frac{4 h}{k_{cu} D}} = 14.15\ \frac{1}{\mathrm{m}}
+m_{al} = \sqrt{\frac{h P}{k_{al} A_c}} = 21.16\ \frac{1}{\mathrm{m}}
 \]</span></p>
 <p><span class="math display">\[
-m_{al} = \sqrt{\frac{4 h}{k_{al} D}} = 21.16\ \frac{1}{\mathrm{m}}
-\]</span></p>
-<p><span class="math display">\[
-m_{ss} = \sqrt{\frac{4 h}{k_{ss} D}} = 75.48\ \frac{1}{\mathrm{m}}
+m_{ss} = \sqrt{\frac{h P}{k_{ss} A_c}} = 75.48\ \frac{1}{\mathrm{m}}
 \]</span></p>
 <p>To plot the temperature distribution, a Python function may be used. This is shown below.</p>
-<div id="d9935c5e" class="cell" data-execution_count="13">
+<div id="1793ed10" class="cell" data-execution_count="14">
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1"></a><span class="kw">def</span> Tdist(x, m):</span>
 <span id="cb2-2"><a href="#cb2-2"></a>    <span class="cf">return</span> (T_b <span class="op">-</span> T_inf)<span class="op">*</span>math.e<span class="op">**</span>(<span class="op">-</span>m<span class="op">*</span>x) <span class="op">+</span> T_inf</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>The <span class="math inline">\(x\)</span> values for the plot may now be created using a <a href="https://numpy.org/doc/stable/reference/generated/numpy.linspace.html">Numpy array</a> ranging from <span class="math inline">\(0mm\)</span> to <span class="math inline">\(350mm\)</span>. This is shown below.</p>
-<div id="c7b1b877" class="cell" data-execution_count="14">
+<div id="28d79b44" class="cell" data-execution_count="15">
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1"></a>x <span class="op">=</span> np.linspace(<span class="dv">0</span>, <span class="dv">350</span>)<span class="op">*</span>ureg.mm</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>The temperature values may now be found using the temperature distribution function <code>Tdist</code>. This is shown below.</p>
-<div id="64bb6f48" class="cell" data-execution_count="15">
+<div id="944c9377" class="cell" data-execution_count="16">
 <div class="sourceCode cell-code" id="cb4"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1"></a>T_cu <span class="op">=</span> Tdist(x, m_cu)</span>
 <span id="cb4-2"><a href="#cb4-2"></a>T_al <span class="op">=</span> Tdist(x, m_al)</span>
 <span id="cb4-3"><a href="#cb4-3"></a>T_ss <span class="op">=</span> Tdist(x, m_ss)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>The plot may now be built. This is shown below.</p>
 <hr>
-<div id="b03ba70e" class="cell" data-execution_count="16">
+<div id="93ffe934" class="cell" data-execution_count="17">
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1"></a>fig, ax <span class="op">=</span> plt.subplots(<span class="dv">1</span>, <span class="dv">1</span>)</span>
 <span id="cb5-2"><a href="#cb5-2"></a></span>
 <span id="cb5-3"><a href="#cb5-3"></a>ax.plot(x.to(<span class="st">&#39;mm&#39;</span>).magnitude, T_cu.to(<span class="st">&#39;degC&#39;</span>).magnitude, label <span class="op">=</span> <span class="st">&#39;Copper&#39;</span>)</span>
@@ -3379,9 +3374,9 @@ q_f=\sqrt{hPkA_c}\theta_b=\sqrt{h\left(\pi D\right)k\left(\frac{\pi}{4} D^2\righ
 <p>For the different materials, this becomes</p>
 <hr>
 <div class="answer">
-<p>Answer (a1): <span class="math inline">\(q_{cu} = \sqrt{\frac{\pi^2 h k_{cu} D^3}{4}}(T_b - T_{inf}) = 8.32\ \mathrm{W}\)</span></p>
-<p>Answer (a2): <span class="math inline">\(q_{al} = \sqrt{\frac{\pi^2 h k_{al} D^3}{4}}(T_b - T_{inf}) = 5.57\ \mathrm{W}\)</span></p>
-<p>Answer (a2): <span class="math inline">\(q_{ss} = \sqrt{\frac{\pi^2 h k_{ss} D^3}{4}}(T_b - T_{inf}) = 1.56\ \mathrm{W}\)</span></p>
+<p>Answer (a1): <span class="math inline">\(q_{cu} = \sqrt{\frac{\pi^2 h k_{cu} D^3}{4}}(T_b - T_{\infty}) = 8.32\ \mathrm{W}\)</span></p>
+<p>Answer (a2): <span class="math inline">\(q_{al} = \sqrt{\frac{\pi^2 h k_{al} D^3}{4}}(T_b - T_{\infty}) = 5.57\ \mathrm{W}\)</span></p>
+<p>Answer (a2): <span class="math inline">\(q_{ss} = \sqrt{\frac{\pi^2 h k_{ss} D^3}{4}}(T_b - T_{\infty}) = 1.56\ \mathrm{W}\)</span></p>
 </div>
 <hr>
 <p>To find the required length of fin for it to be considered infinitely long, we must first realize that an infinitely long fin will have adiabatic condition at the tip. Referring to the tip conditions table, it shows that the heat loss from the fin for the adiabatic tip is</p>
@@ -3396,14 +3391,14 @@ q_f=\sqrt{hPkA_c}\tanh m L
 <p><span class="math display">\[m L = \tanh^{-1}(0.99) \approx 2.647\]</span></p>
 <p>the rod may be considered infinitely long. Solving for <span class="math inline">\(L\)</span> shows</p>
 <p><span class="math display">\[
-L_\infty=\frac{\tanh^{-1}\left(0.99\right)}{\sqrt{\frac{kA_c}{hP}}}=\frac{\tanh^{-1}\left(0.99\right)}{\sqrt{\frac{4 h}{k D}}}
+L_\infty=\frac{\tanh^{-1}\left(0.99\right)}{\sqrt{\frac{hP}{kA_c}}}
 \]</span></p>
 <p>This may be found for the different materials. This is shown below.</p>
 <hr>
 <div class="answer">
-<p>Answer (b1): <span class="math inline">\(L_{cu} = \frac{\tanh^{-1}(0.99)}{\sqrt{\frac{4 h}{k_{cu} D}}} = 187.0\ \mathrm{mm}\)</span></p>
-<p>Answer (b2): <span class="math inline">\(L_{al} = \frac{\tanh^{-1}(0.99)}{\sqrt{\frac{4 h}{k_{al} D}}} = 125.1\ \mathrm{mm}\)</span></p>
-<p>Answer (b3): <span class="math inline">\(L_{ss} = \frac{\tanh^{-1}(0.99)}{\sqrt{\frac{4 h}{k_{ss} D}}} = 35.1\ \mathrm{mm}\)</span></p>
+<p>Answer (b1): <span class="math inline">\(L_{cu} = \frac{\tanh^{-1}(0.99)}{\sqrt{\frac{hP}{k_{cu} A_c}}} = 187.0\ \mathrm{mm}\)</span></p>
+<p>Answer (b2): <span class="math inline">\(L_{al} = \frac{\tanh^{-1}(0.99)}{\sqrt{\frac{hP}{k_{al} A_c}}} = 125.1\ \mathrm{mm}\)</span></p>
+<p>Answer (b3): <span class="math inline">\(L_{ss} = \frac{\tanh^{-1}(0.99)}{\sqrt{\frac{hP}{k_{ss} A_c}}} = 35.1\ \mathrm{mm}\)</span></p>
 </div>
 <hr>
 </section>
