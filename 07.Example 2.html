@@ -3246,7 +3246,7 @@ window.Quarto = {
     <div>
     <div class="quarto-title-meta-heading">Modified</div>
     <div class="quarto-title-meta-contents">
-      <p class="date-modified">Fr 2024-09-06 07:00</p>
+      <p class="date-modified">Mo 2024-09-30 12:42</p>
     </div>
   </div>
     
@@ -3290,7 +3290,7 @@ Figure 2: Discretized System
 </div>
 </figure>
 </div>
-<p>It may then be seen that the heat flows are <span class="math display">\[
+<p>Analyzing node 1, it may then be seen that the heat flows are <span class="math display">\[
 q_1 = 0
 \]</span></p>
 <p><span class="math display">\[
@@ -3309,7 +3309,7 @@ k \left( \frac{\Delta x}{2} \cdot 1 \right) \frac{T_7 - T_1}{\Delta y} + k \left
 <p>Node 1: <span class="math inline">\(T_2 + T_7 - \left(2 + \frac{h_o \Delta x}{k} \right) T_1 = -\frac{h_o \Delta x}{k} T_{\infty,o}\)</span></p>
 <p>It may be seen that nodes 6, 18, and 21 are comparable geometry so a similar approach and expression may be used. These are shown below.</p>
 <p>Node 6: <span class="math inline">\(T_5 + T_{12} - \left(2 + \frac{h_o \Delta x}{k} \right) T_6 = -\frac{h_o \Delta x}{k} T_{\infty,o}\)</span></p>
-<p>Node 18: <span class="math inline">\(T_{17} + T_{12} - \left(2 + \frac{h_i \Delta x}{k} \right) T_{18} = -\frac{h_o \Delta x}{k} T_{\infty,i}\)</span></p>
+<p>Node 18: <span class="math inline">\(T_{17} + T_{12} - \left(2 + \frac{h_i \Delta x}{k} \right) T_{18} = -\frac{h_i \Delta x}{k} T_{\infty,i}\)</span></p>
 <p>Node 21: <span class="math inline">\(T_{15} + T_{20} - \left(2 + \frac{h_i \Delta x}{k} \right) T_{21} = -\frac{h_i \Delta x}{k} T_{\infty,i}\)</span></p>
 <p>Continuing through the nodes, shows that nodes 2 through 5, 16, and 17 correspond to case 3. Thus, they are</p>
 <p>Node 2: <span class="math inline">\(T_1 + T_3 + 2T_8 - 2 \left( 2 + \frac{h_o \Delta x}{k} \right) T_2 = - 2 \frac{ h_o \Delta x}{k} T_{\infty,o}\)</span></p>
@@ -3356,7 +3356,7 @@ f = \frac{h_o \Delta x}{k} T_{\infty,o} = 68.0\ \mathrm{K}
 g = \frac{h_i \Delta x}{k} T_{\infty,i} = 3.2\ \mathrm{K}
 \]</span></p>
 <p>Now the matrix <span class="math inline">\(A\)</span> may be assemblied. The matrix <span class="math inline">\(A\)</span> is constructed using a list of lists in Python and it then is converted into a proper matrix using NumPy’s array datatype. This process is shown below.</p>
-<div id="eb161c55" class="cell" data-execution_count="13">
+<div id="f0ce4325" class="cell" data-execution_count="13">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb1-2"><a href="#cb1-2"></a></span>
 <span id="cb1-3"><a href="#cb1-3"></a>A <span class="op">=</span> [[<span class="op">-</span>a, <span class="dv">1</span>, <span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">1</span>, <span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">0</span>],</span>
@@ -3383,7 +3383,7 @@ g = \frac{h_i \Delta x}{k} T_{\infty,i} = 3.2\ \mathrm{K}
 <span id="cb1-24"><a href="#cb1-24"></a>A <span class="op">=</span> np.array(A)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>It should be noted that each row of the matrix <span class="math inline">\(A\)</span> corresponds to the derive expression for the nodes. That is to say, row 1 is the node 1 expression, row 2 is the node 2 expression, etc. A similar process may be done for vector <span class="math inline">\(C\)</span>. This process is shown below.</p>
-<div id="33a87fc7" class="cell" data-execution_count="14">
+<div id="a2830dc3" class="cell" data-execution_count="14">
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1"></a>C <span class="op">=</span> [<span class="op">-</span>f, <span class="op">-</span><span class="dv">2</span><span class="op">*</span>f, <span class="op">-</span><span class="dv">2</span><span class="op">*</span>f, <span class="op">-</span><span class="dv">2</span><span class="op">*</span>f, <span class="op">-</span><span class="dv">2</span><span class="op">*</span>f, <span class="op">-</span>f, <span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">0</span>, <span class="op">-</span><span class="dv">2</span><span class="op">*</span>g, <span class="op">-</span><span class="dv">2</span><span class="op">*</span>g, <span class="op">-</span><span class="dv">2</span><span class="op">*</span>g, <span class="op">-</span>g, <span class="dv">0</span>, <span class="dv">0</span>, <span class="op">-</span>g]</span>
 <span id="cb2-2"><a href="#cb2-2"></a>C <span class="op">=</span> np.array(C)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
@@ -3393,7 +3393,7 @@ T = A^{-1} C
 \]</span></p>
 <p>This operation is shown below in Python.</p>
 <hr>
-<div id="cb8f24a3" class="cell" data-execution_count="15">
+<div id="a5c3b35b" class="cell" data-execution_count="15">
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1"></a>T <span class="op">=</span> np.matmul(np.linalg.inv(A), C) <span class="co"># answer to first part</span></span>
 <span id="cb3-2"><a href="#cb3-2"></a><span class="bu">print</span>(T)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
@@ -3407,7 +3407,7 @@ T = A^{-1} C
 <hr>
 <p>The maximum value and it’s location may now be found. This is shown below.</p>
 <hr>
-<div id="d9d92154" class="cell" data-execution_count="16">
+<div id="ca15ec96" class="cell" data-execution_count="16">
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1"></a>T <span class="op">=</span> <span class="bu">list</span>(T)</span>
 <span id="cb5-2"><a href="#cb5-2"></a>T_max <span class="op">=</span> <span class="bu">max</span>(T)</span>
 <span id="cb5-3"><a href="#cb5-3"></a>T_max_location <span class="op">=</span> T.index(T_max) <span class="op">+</span> <span class="dv">1</span></span>
