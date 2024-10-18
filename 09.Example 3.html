@@ -3341,7 +3341,7 @@ A_s = \pi D^2 = 314.2\ \mathrm{mm}^{2}
 </div>
 <hr>
 <p>To create a plot of heat rate <span class="math inline">\(q\)</span> versus velocity <span class="math inline">\(V\)</span> plot many of the steps above must be repeated for the range of velocity values. To aid in this process, a Python function will be created. This is shown below.</p>
-<div id="89169faf" class="cell" data-execution_count="17">
+<div id="0c37e378" class="cell" data-execution_count="17">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1"></a><span class="kw">def</span> heat_rate(V):</span>
 <span id="cb1-2"><a href="#cb1-2"></a>    Re_D <span class="op">=</span> V<span class="op">*</span>D<span class="op">/</span>nu_inf</span>
 <span id="cb1-3"><a href="#cb1-3"></a>    Nub_D <span class="op">=</span> <span class="dv">2</span> <span class="op">+</span> (<span class="fl">0.4</span><span class="op">*</span>Re_D<span class="op">**</span>(<span class="dv">1</span><span class="op">/</span><span class="dv">2</span>) <span class="op">+</span> <span class="fl">0.06</span><span class="op">*</span>Re_D<span class="op">**</span>(<span class="dv">2</span><span class="op">/</span><span class="dv">3</span>))<span class="op">*</span>Pr_inf<span class="op">**</span>(<span class="fl">0.4</span>)<span class="op">*</span>(mu_inf<span class="op">/</span>mu_s)<span class="op">**</span>(<span class="dv">1</span><span class="op">/</span><span class="dv">4</span>)</span>
@@ -3350,7 +3350,7 @@ A_s = \pi D^2 = 314.2\ \mathrm{mm}^{2}
 <span id="cb1-6"><a href="#cb1-6"></a>    <span class="cf">return</span> q</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>Start first by importing any needed libraries and defining the unit registry.</p>
-<div id="b879cfdb" class="cell" data-execution_count="18">
+<div id="71193b1b" class="cell" data-execution_count="18">
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
 <span id="cb2-2"><a href="#cb2-2"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb2-3"><a href="#cb2-3"></a><span class="im">import</span> pint</span>
@@ -3358,13 +3358,13 @@ A_s = \pi D^2 = 314.2\ \mathrm{mm}^{2}
 <span id="cb2-5"><a href="#cb2-5"></a>ureg <span class="op">=</span> pint.UnitRegistry()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>The plotting values for <span class="math inline">\(V\)</span> and <span class="math inline">\(q\)</span> are created using <a href="https://docs.scipy.org/doc/numpy/index.html">Numpy’s</a> <a href="https://docs.scipy.org/doc/numpy/reference/generated/numpy.linspace.html#numpy.linspace">linspace</a>. This is shown below.</p>
-<div id="b1a9ca35" class="cell" data-execution_count="19">
+<div id="dc81c04a" class="cell" data-execution_count="19">
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1"></a>Vvals <span class="op">=</span> np.linspace(V_min, V_max, <span class="dv">100</span>)</span>
 <span id="cb3-2"><a href="#cb3-2"></a>qvals <span class="op">=</span> heat_rate(Vvals)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>The plotting handle may now be created and plotting elements added to the plot. This is shown below.</p>
 <hr>
-<div id="268d5422" class="cell" data-execution_count="20">
+<div id="14a9728a" class="cell" data-execution_count="20">
 <div class="sourceCode cell-code" id="cb4"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1"></a>fig, ax <span class="op">=</span> plt.subplots(<span class="dv">1</span>, <span class="dv">1</span>)</span>
 <span id="cb4-2"><a href="#cb4-2"></a></span>
 <span id="cb4-3"><a href="#cb4-3"></a>ax.plot(Vvals, qvals, color<span class="op">=</span><span class="st">&#39;k&#39;</span>)</span>
